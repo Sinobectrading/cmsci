@@ -17,20 +17,27 @@ $requestData= $_REQUEST;
 $columns = array( 
 // datatable column index  => database column name
 	0 =>'item', 
-	1 => 'height',
-	2=> 'width',
-	3=> 'thickness',
-	4=> 'ilength',
-	5=> 'alloy',
-	6=> 'surface',
-	7=> 'color',
-	8=> 'qty',
-	9=> 'unit'
+	1=> 'class',
+	2=> 'sub',
+	3 => 'height',
+	4=> 'width',
+	5=> 'tk',
+	6=> 'tk2',
+	7=> 'od',
+	8=> 'ind',
+	9=> 'nod',
+	10=> 'ilength',
+	11=> 'alloy',
+	12=> 'surface',
+	13=> 'color',
+	14=> 'qty',
+	15=> 'unit'
 );
 
 // getting total number records without any search
 $sql = "SELECT * ";
 $sql.=" FROM inventory";
+
 $query=mysqli_query($conn, $sql) or die("inv.php: get inventory");
 $totalData = mysqli_num_rows($query);
 $totalFiltered = $totalData;  // when there is no search parameter then total number rows = total number filtered rows.
@@ -49,19 +56,31 @@ $sql.=" FROM inventory WHERE 1=1";
 // 	$sql.=" AND length = ".$requestData['columns'][1]['search']['value'];
 // }
 
+if( !empty($requestData['columns'][1]['search']['value']) ){   //name
+    $sql.=" AND class LIKE '".$requestData['columns'][1]['search']['value']."%' ";
+}
+if( !empty($requestData['columns'][2]['search']['value']) ){   //name
+    $sql.=" AND sub LIKE '".$requestData['columns'][2]['search']['value']."%' ";
+}
+
 
 if( !empty($requestData['search']['value']) ) {   
 	$sql.=" AND ( item LIKE '%".$requestData['search']['value']."%' ";    
+	$sql.=" OR class LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR sub LIKE '%".$requestData['search']['value']."%' ";
 	$sql.=" OR height LIKE '%".$requestData['search']['value']."%' ";
 	$sql.=" OR width LIKE '%".$requestData['search']['value']."%' ";
-	$sql.=" OR thickness LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR tk LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR tk2 LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR od LIKE '%".$requestData['search']['value']."%' ";
+ 	$sql.=" OR ind LIKE '%".$requestData['search']['value']."%' ";
+ 	$sql.=" OR nod LIKE '%".$requestData['search']['value']."%' ";
+
 	$sql.=" OR ilength LIKE '%".$requestData['search']['value']."%' ";
 	$sql.=" OR alloy LIKE '%".$requestData['search']['value']."%' ";
 	$sql.=" OR surface LIKE '%".$requestData['search']['value']."%' ";
-	$sql.=" OR color LIKE '%".$requestData['search']['value']."%') ";
-	// $sql.=" OR die LIKE '%".$requestData['search']['value']."%' )";
-
-	// $sql.=" OR employee_age LIKE '".$requestData['search']['value']."%' )";
+	$sql.=" OR unit LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR color LIKE '%".$requestData['search']['value']."%') ";	 
 }
 
 
@@ -86,9 +105,17 @@ while( $row=mysqli_fetch_array($query) ) {  // preparing an array
 	$nestedData=array(); 
 
 	$nestedData[] = $row["item"];
+	$nestedData[] = $row["class"];
+	$nestedData[] = $row["sub"];
+
 	$nestedData[] = $row["height"];
 	$nestedData[] = $row["width"];
-	$nestedData[] = $row["thickness"];
+	$nestedData[] = $row["tk"];
+	$nestedData[] = $row["tk2"];
+	$nestedData[] = $row["od"];
+	$nestedData[] = $row["ind"];
+	$nestedData[] = $row["nod"];
+
 	$nestedData[] = $row["ilength"];
 	$nestedData[] = $row["alloy"];
 	$nestedData[] = $row["surface"];

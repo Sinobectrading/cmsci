@@ -153,6 +153,27 @@ a.carousel-control.right {
     top: 0;
      z-index: 50;
 }
+
+
+
+
+
+
+/*Inventory */
+#inv .dataTables_wrapper .dataTables_filter input {
+  height: 35px;
+  padding-left: 8px;
+  border: 1px solid #47a3da;
+}
+#inv select {
+  height: 35px;
+}
+#track_length {
+  margin-top: 8px;
+}
+#track_filter {
+  margin-bottom: 20px;
+}
 #inventorysec .contat-from-wrapper input[type="submit"] {
     display: block;
     border: none;
