@@ -1,0 +1,316 @@
+ #lg   {
+	font-size: 30px
+}
+#ln {
+  position: relative;
+  display: inline-block;
+  text-align: right;
+  float: right;
+  margin-top: 5px;
+  padding-left: 30px;
+   font-size: 22px;
+
+}
+/* Carousel Fading slide */
+.carousel-fade .carousel-inner { 
+	background: rgba(71,163,218,.4); ; 
+}
+figure.effect-oscar {
+	background-color: transparent;
+}
+.carousel-fade .carousel-control { 
+	z-index: 2; 
+}  
+.carousel-fade .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.carousel-fade .next.left,
+.carousel-fade .prev.right,
+.carousel-fade .item.active { 
+	opacity: 1; 
+}
+
+.carousel-fade .active.left,
+.carousel-fade .active.right {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+
+
+/* Safari Fix */
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+
+/* Carousel Control custom */
+.carousel-control .control-icon {
+  	font-size: 18px;
+  	height: 30px;
+  	margin-top: -15px;
+  	width: 30px;
+  	display: inline-block;
+  	position: absolute;
+  	top: 50%;
+  	z-index: 5;
+ }
+.carousel-control .prev { 
+  	margin-left:  -15px;  left: 50%; 
+} /* Prev */
+.carousel-control .next { 
+  	margin-right: -15px; right: 50%;
+} /* Next */
+
+
+/* Removing BS background */
+.carousel .control-box { 
+	opacity: 0; 
+}
+a.carousel-control.left  { 
+	left: 0; background: 
+	none; border: 0;
+}
+a.carousel-control.right { 
+	right: 0; 
+	background: none; 
+	border: 0;
+}
+
+
+/* Animation */
+.control-box, a.carousel-control, .carousel-indicators li {
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;   
+  /* hardware acceleration causes Bootstrap carousel controlbox margin error in webkit */
+  /* Assigning animation to indicator li will make slides flicker */
+} 
+
+
+/* Hover animation */
+.carousel:hover .control-box { 
+	opacity: 1; 
+}
+.carousel:hover a.carousel-control.left { 
+	left: 15px; 
+}
+.carousel:hover a.carousel-control.right { 
+	right: 15px; 
+}  
+
+
+/* Carouse Indicator */
+.carousel-indicators li.active,
+.carousel-indicators li { 
+	border: 0; 
+}
+
+.carousel-indicators li {
+  background: #666;
+  margin: 0 3px;
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-indicators li.active {
+  background: #fff;
+  margin: 0 3px;
+}
+#inventorysec  figure .post-date {
+    text-align: center;
+      display: block;
+    background-color: transparent;
+     position: absolute;
+    left: 100px;
+    top: 0;
+     z-index: 50;
+}
+#inventorysec .contat-from-wrapper input[type="submit"] {
+    display: block;
+    border: none;
+    outline: none;
+    width: 250px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-size: 21px;
+    color: #FFF;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    background-color: #e84d49;
+    margin: 41px auto;
+    margin-bottom: 0;
+
+} 
+#inventorysec  figure .post-date {
+    text-align: center;
+      display: block;
+    background-color: transparent;
+     position: absolute;
+    left: 100px;
+    top: 0;
+     z-index: 50;
+}
+ 
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 1em;
+    max-width: 450px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: lighter;
+/*    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+*/    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #6a7989;
+    font-weight: lighter;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+    font-size: 1.72em;
+   font-family: 'gilllgt',sans-serif;
+   font-weight: lighter;
+}
+span.input--filled .input__label-content--kaede {
+	font-family: 'gilllgt',sans-serif;
+   font-weight: lighter;
+   font-size: 14px
+}
+
+.input--kaede {
+    display: block;
+    overflow: hidden;
+    margin: 1em auto 2em;
+    background: #EFEEEE;
+}
+
+.input__field--kaede {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 60%;
+    height: 100%;
+    background:rgba(255,255,255,.36);
+    color: #9DABBA;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__label--kaede {
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    cursor: text;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__label-content--kaede {
+    padding: 1.5em 0;
+}
+
+.input__field--kaede:focus,
+.input--filled .input__field--kaede {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition-delay: 0.06s;
+    transition-delay: 0.06s;
+}
+
+.input__field--kaede:focus + .input__label--kaede,
+.input--filled .input__label--kaede  {
+    -webkit-transform: translate3d(60%, 0, 0);
+    transform: translate3d(60%, 0, 0);
+    pointer-events: none;
+}
+.input--filled .input__field--kaede {
+    font-size: 1.4em;
+    color: #4e4e4e;
+    border: 1px solid #ddd;
+}
+.input--filled .input__label-content--kaede {
+    padding-left: 1vw;
+}
+form#orderfm {
+    margin-top: 8vh
+}
+@media screen and (max-width: 34em) {
+    .input__field--kaede:focus + .input__label--kaede,
+    .input--filled .input__label--kaede  {
+        -webkit-transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+        transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+        pointer-events: none;
+    }
+}
